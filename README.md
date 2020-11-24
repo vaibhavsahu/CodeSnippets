@@ -49,4 +49,21 @@ Utility Code snippets for Java
 
     Objects.equal(list1, list2); returns true if lists are equal else false
     
+5. Using multiple properties to sort the list
+	
+	   public class Vote {
+		private String preference;
+		private String option;
+		private int count;
+	    }
+	    
+	    List<Vote> votes = new ArrayList<>();
+	    
+	    Comparator<Vote> comparator = Comparator.comparing(Vote::getCount)
+                                                .thenComparing(Vote::getOption)
+						.thenComparing(Vote::getPreference);
+	    					
+    	
+	
+	   Collections.sort(votes, comparator);
     
